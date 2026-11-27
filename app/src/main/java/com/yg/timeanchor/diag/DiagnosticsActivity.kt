@@ -43,7 +43,7 @@ class DiagnosticsActivity : Activity() {
             setPadding(0, 26, 0, 8)
         })
         root.addView(TextView(this).apply {
-            text = Prefs.logs(this).ifBlank { "（暂无）" }
+            text = Prefs.logs(this@DiagnosticsActivity).ifBlank { "（暂无）" }
             textSize = 11f; setTextColor(Color.parseColor("#8B97A5"))
         })
 

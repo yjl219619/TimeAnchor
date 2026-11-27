@@ -59,7 +59,7 @@ object Diagnostics {
                 NotificationManager.INTERRUPTION_FILTER_NONE -> "完全静音（一定会压掉提醒）"
                 else -> "勿扰已开启"
             },
-            Intent(Settings.ACTION_ZEN_MODE_SETTINGS)))
+            Intent(Settings.ACTION_ZEN_MODE_ACCESS_SETTINGS)))
 
         // 5 通知"覆盖勿扰"（仅能给出入口，无法读）
         out.add(Check("通知类别可覆盖勿扰", null,

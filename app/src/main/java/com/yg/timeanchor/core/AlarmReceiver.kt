@@ -3,6 +3,7 @@ package com.yg.timeanchor.core
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import com.yg.timeanchor.ring.RingItem
 import com.yg.timeanchor.ring.RingQueue
 import com.yg.timeanchor.ring.RingService
 
