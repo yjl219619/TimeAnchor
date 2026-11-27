@@ -1,0 +1,13 @@
+> Task :app:compileDebugKotlin FAILED
+e: file:///workspaces/TimeAnchor/app/src/main/java/com/yg/timeanchor/diag/Diagnostics.kt:62:29 Unresolved reference 'ACTION_ZEN_MODE_ACCESS_SETTINGS'.
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+
+BUILD FAILED in 27s
+26 actionable tasks: 1 executed, 25 up-to-date
