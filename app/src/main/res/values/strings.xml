@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">时间锚点</string>
+    <string name="notif_channel_alarm">闹钟</string>
+    <string name="notif_channel_service">响铃服务</string>
+</resources>
