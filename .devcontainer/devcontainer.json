@@ -1,0 +1,13 @@
+{
+  "name": "TimeAnchor 构建环境",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": { "version": "17" }
+  },
+  "postCreateCommand": "bash .devcontainer/postCreate.sh",
+  "remoteEnv": {
+    "ANDROID_HOME": "/opt/android-sdk",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk"
+  },
+  "hostRequirements": { "cpus": 2, "memory": "8gb", "storage": "32gb" }
+}
