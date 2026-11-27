@@ -57,7 +57,7 @@ class MainActivity : Activity() {
                 startActivity(Intent(android.provider.Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                     android.net.Uri.parse("package:$packageName")))
             },
-            btn("诊断页") { startActivity(Intent(this, DiagnosticsActivity::class.java)) }
+            btn("诊断页") { startActivity(Intent(this, DiagnosticsActivity::class.java)) },
             btn("取消全部") { Prefs.all(this).forEach { AlarmScheduler.cancel(this, it) }; render() }
         ))
 
