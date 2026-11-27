@@ -53,6 +53,16 @@ class MainActivity : Activity() {
             btn("测试 30 秒") { addAlarm(minutes = 0, seconds = 30, name = "测试闹钟") }
         ))
         root.addView(row(
+            btn("所有文件权限") {
+                if (android.os.Build.VERSION.SDK_INT >= 30) {
+                    try {
+                        startActivity(Intent(android.provider.Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION,
+                            android.net.Uri.parse("package:$packageName")))
+                    } catch (e: Exception) {
+                        startActivity(Intent(android.provider.Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION))
+                    }
+                }
+            },
             btn("悬浮窗权限") {
                 startActivity(Intent(android.provider.Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
                     android.net.Uri.parse("package:$packageName")))
