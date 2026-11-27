@@ -68,6 +68,10 @@ class MainActivity : Activity() {
                     android.net.Uri.parse("package:$packageName")))
             },
             btn("诊断页") { startActivity(Intent(this, DiagnosticsActivity::class.java)) },
+            btn("按日程重排") {
+                val n = Day.registerToday(this)
+                Toast.makeText(this, "注册 $n 条", Toast.LENGTH_SHORT).show(); render()
+            },
             btn("取消全部") { Prefs.all(this).forEach { AlarmScheduler.cancel(this, it) }; render() }
         ))
 
@@ -79,6 +83,12 @@ class MainActivity : Activity() {
 
         requestNotificationPermission()
         render()
+        // 打开即按今天日程重排（需「所有文件访问」权限）
+        if (Day.canReadAll()) {
+            val n = Day.registerToday(this)
+            if (n > 0) Toast.makeText(this, "已按日程注册 $n 条", Toast.LENGTH_SHORT).show()
+            render()
+        }
     }
 
     private fun addAlarm(minutes: Int, seconds: Int = 0, name: String? = null) {
